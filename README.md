@@ -10,6 +10,7 @@ Creation de planning
 Consultation de user
 Edition de planning / suppression
 Edition de user
+Creation de la base
 
 # Detail des fonctionnalités
 
