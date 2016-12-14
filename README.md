@@ -2,15 +2,16 @@
 Formation OSS de PHP avancé
 
 # Vues
-Menu
-Formulaire de login
+Creation de la base >
+Front controller + Menu >
+Formulaire de login >
 Formulaire de sign-up (creation de compte)
 Consultation de planning
 Creation de planning
-Consultation de user
 Edition de planning / suppression
+
+Consultation de user
 Edition de user
-Creation de la base
 
 # Detail des fonctionnalités
 
