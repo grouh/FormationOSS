@@ -5,7 +5,8 @@
 </head>
 <body>
 <?php
-    echo "coucou";
+    include_once './controller/FrontController.php';
+    echo render();
 ?>
 </body>
 </html>
