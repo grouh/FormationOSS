@@ -58,12 +58,14 @@ function renderDeleteTrainer(){
         //TODO display error message
     }
 
-    //get trainer to delete
-    $trainerId = getTrainerById($_GET['trainerid']);
 
     if(isset($_GET['trainerid'])){
+        
+        //get trainer to delete
+        $trainerId = getTrainerById($_GET['trainerid']);
         $trainerId = $_GET['trainerid'];
         deleteTrainer($trainerId);
         echo $_GET['trainerid'];
+        
     }
 }
