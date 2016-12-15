@@ -1,4 +1,4 @@
 <?php
 function isUserLoggedIn(){
-    return true;
+    return false;
 }
