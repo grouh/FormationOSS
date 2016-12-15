@@ -3,15 +3,27 @@
 
 require '../manager/planningManager.php';
 require '../form/createPlanningForm.php';
+require '../repository/planningRepository.php';
 
 
-function renderListPlanning()
-{
+
+    function renderListPlanning(){
+
+    }
+
+    function renderEditPlanning($date){
+
+        //Get planning to edit
+        // in repository
+        $planning = getPlannning($date);
 
 }
 
-function renderEditPlanning($date)
-{
+        //if no error; then proceed to actions
+        if(!$error){
+            //update the planning data
+            // in managers
+            updatePlanning($_POST["Id"], $_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
 
     //Get planning to edit
     // in repository
