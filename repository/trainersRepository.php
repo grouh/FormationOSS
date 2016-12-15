@@ -1,6 +1,6 @@
 <?php
 
-include "./services/sqlDriverService.php";
+require_once "./services/sqlDriverService.php";
 
 function getAllTrainers() {
 
