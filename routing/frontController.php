@@ -5,6 +5,7 @@
     include_once 'controller/userController.php';
     include_once 'controller/trainerController.php';
     include_once 'controller/planningController.php';
+    include_once 'controller/showPlanningController.php';
     include_once 'services/authenticationService.php';
 
     function render(){
@@ -30,8 +31,13 @@
                 case 'createPlanning':
                     renderCreatePlanning();
                     break;
+                case 'createTrainer':
+                    renderCreateTrainer();
+                    break;
                 case 'listPlanning':
-                    renderCreatePlanning();
+
+                    renderPlanning();
+
                     break;
                 case 'editPlanning':
                     renderEditPlanning();

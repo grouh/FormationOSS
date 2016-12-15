@@ -20,7 +20,7 @@ require_once './repository/planningRepository.php';
             echo "error on planning id";
         }
 
-        $planning = getPlannningById($_GET['ID']);
+        $planning = getPlaningById($_GET['ID']);
         
         if(isset($_POST['edit'])){
 

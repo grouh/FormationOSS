@@ -40,3 +40,26 @@ function deleteTrainer($trainerId){
     return $stmt->execute();
 
 }
+
+/**
+* Créer un nouveau formateur
+*/
+function createTrainer($firstName, $lastName, $email, $phone) {
+
+    try {
+        $dbh = getDatabaseConnection();
+
+        $stmt = $dbh->prepare(" INSERT INTO trainers (firstName, lastName, email, phone) VALUES (:firstName, :lastName, :email, :phone)");
+        $stmt->bindParam(':firstName', $firstName);
+        $stmt->bindParam(':lastName', $lastName);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':phone', $phone);
+
+        $stmt->execute();
+    }
+
+    catch(Exception $e) {
+        throw  new Exception("Error create in base ");
+
+    }
+}

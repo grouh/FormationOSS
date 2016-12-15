@@ -7,9 +7,9 @@
      */
     function getPlanningById($id){
         
-        $bdh = new PDO('mysql:host=localhost; dbname=FormationOSS', 'root', 'root');
+        $bdh = getDatabaseConnection(); 
         
-        $results = $dbh -> query("SELECT * FROM planning WHERE date='.$id.'");
+        $results = $bdh -> query("SELECT * FROM planning WHERE date='.$id.'");
         
         return $results;
     }
@@ -21,9 +21,9 @@
      */
     function getAllPlanning(){
         
-        $bdh = new PDO('mysql:host=localhost; dbname=FormationOSS', 'root', 'root');
+        $bdh=getDatabaseConnection();        
         
-        $results = $dbh -> query("SELECT * FROM planning");
+        $results = $bdh -> query("SELECT * FROM planning");
         
-        return $results;
+        return $results->fetchAll();
     }
