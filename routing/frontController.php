@@ -3,6 +3,7 @@
     include_once 'controller/menuController.php';
     include_once 'controller/loginController.php';
     include_once 'controller/userController.php';
+    include_once 'controller/trainerController.php';
     include_once 'services/authenticationService.php';
 
     function render(){
@@ -34,6 +35,10 @@
                 case 'listUsers':
                     // List users
                     renderListUsers();
+                    break;
+                case 'listTrainers':
+                    // List trainers
+                    renderListTrainers();
                     break;
                 case 'editUser':
                     // Edit user
