@@ -10,7 +10,7 @@ function renderListTrainers(){
     $trainers = getAllTrainers();
     
     //display it
-    include 'views/listTRainersView.php';
+    include 'views/listTrainersView.php';
 
 }
 
@@ -39,7 +39,7 @@ function renderEditTrainer(){
 
         if(!$errors){
             //update the trainer data
-            updateUser($trainer);
+            updateTrainer($trainer);
 
             //redirect to the planning
             //header("listeController.php");
@@ -49,4 +49,21 @@ function renderEditTrainer(){
     //call view
     include 'views/editTrainerView.php';
 
+}
+
+function renderDeleteTrainer(){
+
+    if(!isset($_GET['trainerid'])){
+        echo "error on trainer id";
+        //TODO display error message
+    }
+
+    //get trainer to delete
+    $trainerId = getTrainerById($_GET['trainerid']);
+
+    if(isset($_GET['trainerid'])){
+        $trainerId = $_GET['trainerid'];
+        deleteTrainer($trainerId);
+        echo $_GET['trainerid'];
+    }
 }

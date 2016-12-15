@@ -16,15 +16,13 @@
 <?php foreach ($trainers as $trainer): ?>
     <tr>
         <td><?php echo $trainer['ID']; ?></td>
-        <td><?php echo $trainer['login']; ?></td>
-        <td><?php echo $trainer['role']; ?></td>
         <td><?php echo $trainer['firstName']; ?></td>
         <td><?php echo $trainer['lastName']; ?></td>
         <td><?php echo $trainer['email']; ?></td>
         <td><?php echo $trainer['phone']; ?></td>
         <td>
-            <a href="?action=editTrainer&userid=<?php echo $trainer['ID']; ?>">Modifier</a>
-            <a href="?action=deleteTrainer&userid=<?php echo $trainer['ID']; ?>">Supprimer</a>
+            <a href="?action=editTrainer&trainerid=<?php echo $trainer['ID']; ?>">Modifier</a>
+            <a href="?action=deleteTrainer&trainerid=<?php echo $trainer['ID']; ?>">Supprimer</a>
         </td>
     </tr>
 <?php endforeach; ?>

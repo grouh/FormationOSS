@@ -1,6 +1,6 @@
 <?php
 
-require_once "./services/sqlDriverService.php";
+require_once "services/sqlDriverService.php";
 
 function updateTrainer($trainer) {
 
@@ -26,4 +26,17 @@ function updateTrainer($trainer) {
     $stmt->bindParam(':id', $trainer['ID']);
 
     return $stmt->execute();
+}
+
+function deleteTrainer($trainerId){
+
+    $dbh = getDatabaseConnection();
+
+    $sql = "DELETE FROM trainers
+            WHERE ID = $trainerId";
+
+    $stmt = $dbh->prepare($sql);
+
+    return $stmt->execute();
+
 }

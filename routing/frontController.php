@@ -37,16 +37,25 @@
                     renderListUsers();
                     break;
                 case 'listTrainers':
-                    // List trainers
+                    // List users
                     renderListTrainers();
+                    break;
+                case 'editTrainer':
+                    // Edit trainer
+                    renderEditTrainer();
                     break;
                 case 'editUser':
                     // Edit user
                     renderEditUser();
                     break;
+                case 'deleteTrainer':
+                    //Delete trainer
+                    renderDeleteTrainer();
+                    break;
                 case 'deleteUser':
                     //Delete user
                     renderDeleteUser();
+                    break;
             }
         }else{
             return "nothing to display";
