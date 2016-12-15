@@ -10,9 +10,6 @@
 
 function createSession($login, $password) {
 
-
-    session_start();
-
     $_SESSION["connected"] = true;
     $_SESSION["login"] = $login;
     $_SESSION["password"] = $password;
@@ -21,7 +18,6 @@ function createSession($login, $password) {
 }
 
 function destroySession() {
-    session_start();
     // empty data
     $_SESSION = array();
 
@@ -29,4 +25,17 @@ function destroySession() {
     session_destroy();
 
     return true;
+}
+
+function isUserLoggedIn(){
+
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if(isset($_SESSION["connected"])){
+        return true;
+    } else {
+        return false;
+    }
 }

@@ -16,7 +16,7 @@ require_once './form/loginForm.php';
 function renderLoginForm() {
 
 
-    if (isset($_POST['Submit1'])) {
+    if (isset($_POST['submit'])) {
 
         $error = check_form($_POST["login"], $_POST["password"]);
 
@@ -31,4 +31,10 @@ function renderLoginForm() {
     }
 
     include './views/loginView.php';
+}
+
+
+function executeLogout(){
+    destroySession();
+    header("Location:?action=");
 }

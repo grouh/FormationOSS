@@ -7,6 +7,6 @@
         <a href="?action=createUser">Create User</a>
         <a href="?action=listTrainers">Trainers</a>
         <a href="?action=createTrainer">Create Trainer</a>
-        <a href="#">Logout</a>
+        <a href="?action=logout">Logout</a>
     </div>
 </div>

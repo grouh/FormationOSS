@@ -3,9 +3,7 @@
 require_once "./services/sqlDriverService.php";
 
 function updateUser($user) {
-
-    var_dump($user);
-
+    
     $dbh = getDatabaseConnection();
 
     $sql = "UPDATE users 

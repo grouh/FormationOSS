@@ -4,10 +4,18 @@ require_once "./services/sqlDriverService.php";
 
 function userIsOk($login, $password)
 {
-    $bdd = new PDO('mysql:host=localhost; dbname=FormationOSS.sql', 'root', '');
-    $result = $bdd->query('SELECT login, password FROM users WHERE login=$login and password=$password ');
+    $dbh = getDatabaseConnection();
 
-    return $result->fetchAll();
+    $password = sha1($password);
+
+    $query = 'SELECT login, password FROM users WHERE login="'.$login.'" and password="'.$password.'"';
+
+    $result = $dbh->query($query);
+
+    if($result){
+        return $result->fetchAll();
+    }
+    return false;
 }
 
 
