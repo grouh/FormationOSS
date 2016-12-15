@@ -11,7 +11,7 @@ require '../repository/planningRepository.php';
         
         $planning = getAllPlanning();
     
-        include '../views/listPlanningView.php';
+        include './views/listPlanningView.php';
     }
 
     function renderEditPlanning(){
@@ -38,7 +38,7 @@ require '../repository/planningRepository.php';
             updatePlanning($_GET["id"], $_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
         }
 
-        include '../views/editPlanningView.php';
+        include './views/editPlanningView.php';
     
     }
 
@@ -53,16 +53,12 @@ function renderCreatePlanning()
         if (isset($_POST['createPlanning'])) {
             if (validateCreateForm()) {
 
-                //  echo "on a validé le formulaire ";
                 createPlanning($_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
 
                 $messageInfo = "Planning créé";
-
-            } else {
-                //  echo "probleme controleur ";
-                //probleme
+                //a confirmer
+                header("Location: /routing/frontController.php");
             }
-
         }
     }
     catch (Exception $e) {
@@ -70,5 +66,5 @@ function renderCreatePlanning()
     }
 
 
-    include('../views/createPlanningView.php');
+    include('./views/createPlanningView.php');
 }
