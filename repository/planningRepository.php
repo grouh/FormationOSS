@@ -17,7 +17,6 @@
     
     /**
      * Return all planning
-     * @param 
      * @return date, label and teacher
      */
     function getAllPlanning(){

@@ -7,11 +7,11 @@
  * @param text $label
  * @param text $teacher
  */
-function updatePlanning($date, $label, $teacher){
+function updatePlanning($id, $date, $label, $teacher){
     
     $bdh = new PDO('mysql:host=localhost; dbname=FormationOSS','root','root');
     
-    $result= $bdh -> query("UPDATE planning SET label='.$label.', teach='.$teacher.' WHERE date='.$date.'");    
+    $result= $bdh -> query("UPDATE planning SET Date='.$date.', label='.$label.', teach='.$teacher.' WHERE ID='.$id.'");    
 }
 
 
@@ -19,11 +19,11 @@ function updatePlanning($date, $label, $teacher){
  * Delete a formation in the database
  * @param int $date
  */
-function deletePlanning($date){
+function deletePlanning($id){
     
     $bdh = new PDO('mysql:host=localhost; dbname=FormationOSS','root','root');
     
-    $result= $bdh -> query("DELETE FROM planning WHERE date='.$date.'");
+    $result= $bdh -> query("DELETE FROM planning WHERE ID='.$id.'");
 }
 
 
