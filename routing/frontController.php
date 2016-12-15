@@ -4,6 +4,7 @@
     include_once 'controller/loginController.php';
     include_once 'controller/userController.php';
     include_once 'controller/trainerController.php';
+    include_once 'controller/planningController.php';
     include_once 'services/authenticationService.php';
 
     function render(){
@@ -26,11 +27,14 @@
             renderMenu();
 
             switch ($_GET['action']) {
-                case 'planning':
-                    // Display planning
-                    // Edit planning
-                    // Create planning
-                    //renderPlanning();
+                case 'createPlanning':
+                    renderCreatePlanning();
+                    break;
+                case 'listPlanning':
+                    renderCreatePlanning();
+                    break;
+                case 'editPlanning':
+                    renderEditPlanning();
                     break;
                 case 'listUsers':
                     // List users

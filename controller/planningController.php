@@ -70,16 +70,12 @@ function renderCreatePlanning()
         if (isset($_POST['createPlanning'])) {
             if (validateCreateForm()) {
 
-                //  echo "on a validé le formulaire ";
                 createPlanning($_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
 
                 $messageInfo = "Planning créé";
-
-            } else {
-                //  echo "probleme controleur ";
-                //probleme
+                //a confirmer
+                header("Location: /routing/frontController.php");
             }
-
         }
     }
     catch (Exception $e) {
