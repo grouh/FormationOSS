@@ -1,11 +1,6 @@
 <?php
 
-
-    
-
     require_once './services/sqlDriverService.php';
-
-
 
     /**
      * Delete a formation in the database
