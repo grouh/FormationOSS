@@ -22,7 +22,7 @@ include '../form/loginForm.php';
 
 function renderLoginForm() {
     
-    require_once '../views/loginView.php';
+    
     
     $error = check_form($_POST["login"], $_POST["password"]);
 
@@ -33,6 +33,7 @@ function renderLoginForm() {
 
         createSession($login, $password);
     }
+    require_once '../views/loginView.php';
     return "this is the login form";
 }
 
