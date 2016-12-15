@@ -14,7 +14,7 @@
     <body>
 
         <table>
-            <caption><b>Consultation du planning de formation</b></caption>
+            <caption><b>Planning de formation</b></caption>
             <tr>
                 <td>Date</td>
                 <td>Label</td>
@@ -32,10 +32,10 @@
                 <td><?php echo $outputLine['label'] ?></td>
                 <td><?php echo $outputLine['teach'] ?></td>  
                  <td>
-                     
+                                  
                      <?php if($role=="ADMIN"){?>
-                        <a href="editPlanningView.php">Delete</a>
-                        <a href="editPlanningView.php">Update</a>                 
+                        <a href="../views/editPlanningView.php?action=planning&id=<?php  echo $outputLine['ID'] ?>">Delete</a>
+                        <a href="../views/editPlanningView.php?action=planning&id=<?php  echo $outputLine['ID'] ?>">Update</a>                 
                      <?php } ?>         
                      
                 </td>

@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-
+//include_once "../services/sqlDriverService.php";
 define('DSN',"mysql:host=localhost;dbname=FormationOSS");
 define('USER','root');
 define('PASS','');
@@ -21,6 +21,7 @@ function getPlanningData(){
     $data=['res'=>'','erreurs'=>''];
     try{
         $db = new PDO(DSN, USER, PASS);
+        //$db= getDatabaseConnection();
         $result=$db->query("SELECT * FROM planning");   
         $data['res']=$result->fetchAll();  
     }

@@ -14,8 +14,8 @@ function createSession($login, $password) {
     session_start();
 
     $_SESSION["connected"] = true;
-    $_SESSION["$login"] = $login;
-    $_SESSION["$password"] = $password;
+    $_SESSION["login"] = $login;
+    $_SESSION["password"] = $password;
 
     return true;
 }

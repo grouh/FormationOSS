@@ -50,29 +50,31 @@ require '../repository/planningRepository.php';
     return $html;
 
 }
-renderCreatePlanning();
+
 
 function renderCreatePlanning()
 {
 
-    $messageInfo ="";
+    $messageInfo = "";
     try {
-        if (validateCreateForm()) {
+        if (isset($_POST['createPlanning'])) {
+            if (validateCreateForm()) {
 
-            //  echo "on a validé le formulaire ";
-            createPlanning($_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
+                //  echo "on a validé le formulaire ";
+                createPlanning($_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
 
-            $messageInfo = "Planning créé";
+                $messageInfo = "Planning créé";
 
-        } else {
-            //  echo "probleme controleur ";
-            //probleme
+            } else {
+                //  echo "probleme controleur ";
+                //probleme
+            }
+
         }
-
-    } catch (Exception $e) {
+    }
+    catch (Exception $e) {
         $messageInfo = "Exception " . $e->getMessage();
     }
-
 
 
     include('../views/createPlanningView.php');
