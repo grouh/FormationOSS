@@ -30,6 +30,9 @@
                 case 'createPlanning':
                     renderCreatePlanning();
                     break;
+                case 'createTrainer':
+                    renderCreateTrainer();
+                    break;
                 case 'listPlanning':
                     renderListPlanning();
                     break;

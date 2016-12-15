@@ -65,7 +65,31 @@ function renderDeleteTrainer(){
         $trainerId = getTrainerById($_GET['trainerid']);
         $trainerId = $_GET['trainerid'];
         deleteTrainer($trainerId);
-        echo $_GET['trainerid'];
+        header("Location:?action=listTrainers");
         
     }
+}
+
+
+function renderCreateTrainer()
+{
+
+    $messageInfo = "";
+    try {
+        if (isset($_POST['createTrainer'])) {
+
+            createTrainer($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["phone"]);
+
+            $messageInfo = "Formateur créé";
+            
+            header("Location:?action=listTrainers");
+        }
+
+    }
+    catch (Exception $e) {
+        $messageInfo = "Exception " . $e->getMessage();
+    }
+
+
+    include('./views/createTrainerView.php');
 }
