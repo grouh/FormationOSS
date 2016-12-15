@@ -1,6 +1,7 @@
 <?php 
     include "../manager/showPlanningManager.php";
     $role=getRole(); 
+    $role="ADMIN";
       
 ?>
 <!DOCTYPE html>
@@ -33,8 +34,8 @@
                  <td>
                      
                      <?php if($role=="ADMIN"){?>
-                        <a href="../manager/showPlanningManager.php">Delete</a>
-                        <a href="../manager/showPlanningManager.php">Update</a>                 
+                        <a href="editPlanningView.php">Delete</a>
+                        <a href="editPlanningView.php">Update</a>                 
                      <?php } ?>         
                      
                 </td>

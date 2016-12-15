@@ -18,6 +18,8 @@
              include "Location: ../views/errorViews.php";
         }          
     }
+    
+    renderPlanning();
 
 
 ?>

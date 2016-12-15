@@ -4,6 +4,7 @@
     include_once 'controller/loginController.php';
     include_once 'controller/userController.php';
     include_once 'services/authenticationService.php';
+    include_once 'controller/showPlanningController.php';
 
     function render(){
 
@@ -27,6 +28,7 @@
             switch ($_GET['action']) {
                 case 'planning':
                     // Display planning
+                    renderPlanning();
                     // Edit planning
                     // Create planning
                     //renderPlanning();
