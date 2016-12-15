@@ -16,6 +16,7 @@ function userIsOk($login, $password)
         return $result->fetchAll();
     }
     return false;
+
 }
 
 
