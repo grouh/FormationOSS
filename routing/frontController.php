@@ -32,7 +32,9 @@
                     renderCreatePlanning();
                     break;
                 case 'listPlanning':
+
                     renderPlanning();
+
                     break;
                 case 'editPlanning':
                     renderEditPlanning();

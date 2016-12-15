@@ -4,6 +4,7 @@ require_once './repository/usersRepository.php';
 require_once './manager/userManager.php';
 require_once './form/editUserForm.php';
 
+
 function renderListUsers(){
 
     //retrieve the users data
@@ -79,5 +80,5 @@ function renderDeleteUser(){
     }
 
     //call view
-    include '../views/deleteUserView.php';
+    include './views/deleteUserView.php';
 }
