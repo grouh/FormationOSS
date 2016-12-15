@@ -2,7 +2,7 @@
 --
 -- Host: 127.0.0.1    Database: FormationOSS
 -- ------------------------------------------------------
--- for formation projet "PHP avancé"
+-- for Training project "PHP avancé"
 
 
 DROP DATABASE IF EXISTS `FormationOSS`;
@@ -34,9 +34,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`ID`, `login`, `password`, `role`, `firstName`, `lastName`, `email`, `phone`) 
 VALUES
-(1,	'thlec',	'5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8',	'ADMIN',	'Thomas', 	NULL,	NULL,	NULL),
-(2,	'marc',		'5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8',	'ADMIN',	'Marc',		NULL,	NULL,	NULL),
-(3,	'user',		'12dea96fec20593566ab75692c9949596833adc9',	'USER',		'User',		NULL,	NULL,	NULL);
+(1,	'thlec',	'5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8',	'ADMIN',	'Thomas', 	'mdp=password',	NULL,	NULL),
+(2,	'marc',		'5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8',	'ADMIN',	'Marc',		'mdp=password',	NULL,	NULL),
+(3,	'user',		'12dea96fec20593566ab75692c9949596833adc9',	'USER',		'User',		'mdp=user',	NULL,	NULL);
 
 
 --
@@ -45,7 +45,8 @@ VALUES
 
 DROP TABLE IF EXISTS `planning`;
 CREATE TABLE `planning` (
-  `date` int(8) unsigned NOT NULL PRIMARY KEY,
+  `ID` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `date` int(8) unsigned NOT NULL,
   `label` varchar(256) COLLATE 'utf8_general_ci' NOT NULL,
   `teach` varchar(256) COLLATE 'utf8_general_ci' NULL
 ) COLLATE 'utf8_general_ci';
@@ -54,16 +55,16 @@ CREATE TABLE `planning` (
 --
 -- Dumping data for table `planning`
 --
--- ORDER BY:  `date`
+-- ORDER BY:  `ID`
 
-INSERT INTO `planning` (`date`, `label`, `teach`) VALUES
-(20161203,	'PHP base',	'Thomas'),
-(20161205,	'PHP base',	'Thomas'),
-(20161206,	'PHP base',	'Thomas'),
-(20161207,	'PHP base',	'Thomas'),
-(20161208,	'PHP base',	'Thomas'),
-(20161209,	'PHP avancé',	'Sylvain'),
-(20161211,	'PHP avancé',	'Sylvain'),
-(20161212,	'PHP avancé',	'Sylvain'),
-(20161213,	'PHP avancé',	'Sylvain'),
-(20161214,	'PHP avancé',	'Sylvain');
+INSERT INTO `planning` (`ID`, `date`, `label`, `teach`) VALUES
+(1,	20161203,	'PHP base',	'Thomas'),
+(2,	20161205,	'PHP base',	'Thomas'),
+(3,	20161206,	'PHP base',	'Thomas'),
+(4,	20161207,	'PHP base',	'Thomas'),
+(5,	20161208,	'PHP base',	'Thomas'),
+(6,	20161209,	'PHP avancé',	'Sylvain'),
+(7,	20161211,	'PHP avancé',	'Sylvain'),
+(8,	20161212,	'PHP avancé',	'Sylvain'),
+(9,	20161213,	'PHP avancé',	'Sylvain'),
+(10,	20161214,	'PHP avancé',	'Sylvain');
