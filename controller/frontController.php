@@ -3,7 +3,9 @@
     include_once 'controller/menuController.php';
     include_once 'controller/loginController.php';
     include_once 'controller/userController.php';
+    include_once 'controller/signUpController.php';
     include_once 'services/authenticationService.php';
+   
 
     function render(){
 
@@ -12,7 +14,7 @@
 
             if(isset($_GET['action']) && $_GET['action']=='signup'){
                 //Sign up form
-                //return renderSignUpForm();
+                return renderSignUpForm();
             }else{
                 //Login form
                 return renderLoginForm();
