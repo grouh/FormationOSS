@@ -37,9 +37,13 @@ function createPlanning($date, $cours, $teacher) {
 
     try {
         $dbh = getDatabaseConnection();
-        $sql = " INSERT INTO planning (date, label, teach) VALUES ( " . $date . ", '" . $cours . "', '" . $teacher . "')";
 
-        $query = $dbh->query($sql);
+        $stmt = $dbh->prepare(" INSERT INTO planning (date, label, teach) VALUES (?, ?, ?)");
+        $stmt->bindParam(1, $date);
+        $stmt->bindParam(2, $cours);
+        $stmt->bindParam(3, $teacher);
+
+        $stmt->execute();
     }
 
     catch(Exception $e) {

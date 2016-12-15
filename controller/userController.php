@@ -52,3 +52,22 @@ function renderEditUser(){
     include 'views/editUserView.php';
 
 }
+
+function renderDeleteUser(){
+
+    if(!isset($_GET['userid'])){
+        echo "error on user id";
+        //TODO display error message
+    }
+
+    //get user to delete
+    $userId = getUserById($_GET['userid']);
+
+    if(isset($_POST['delete'])){
+        $userId = $user['ID'];
+        deleteUser($userId);
+    }
+
+    //call view
+    include 'views/deleteUserView.php';
+}
