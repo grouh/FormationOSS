@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-    include_once './controller/frontController.php';
+    include_once './routing/frontController.php';
     echo render();
 ?>
 </body>
