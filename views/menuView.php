@@ -3,6 +3,7 @@
     <div>
         <a href="#">Home</a>
         <a href="?action=listUsers">Users</a>
+        <a href="?action=listTrainers">Trainers</a>
         <a href="#">Logout</a>
     </div>
 </div>
