@@ -30,3 +30,15 @@ function getUserById($id) {
     return $results->fetch();
 
 }
+
+/**
+ * get the role of a user from the table 'users' by passing the login 
+ * @param string $login
+ * @return array
+ */
+function getRoleByLogin($login){
+     $dbh = getDatabaseConnection();
+     $rq="SELECT role FROM users where login = '$login'";
+     $result=$dbh->query($rq); 
+     return $result->fetch();
+}

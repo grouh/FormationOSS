@@ -1,25 +1,31 @@
 <?php
 
-require_once "./repository/showPlanningRepository.php";
+require_once './repository/planningRepository.php';
    
     /**
      * retrieve the planning from table Planning
      */    
     function renderPlanning(){
         
-        $dataPlanning=getPlanningData(); 
-    
-        if($dataPlanning['erreurs']== false){
-            $outputData=$dataPlanning['res'];
-            include "./views/showPlanningView.php";
-        }
-        else{
-            $error=$dataPlanning["errors"];
-             include "Location: ./views/errorViews.php";
-        }          
+        $outputData=getAllPlanning();    
+        
+        include "./views/showPlanningView.php";
+               
     }
     
-    renderPlanning();
+    /**
+     * get user's role 
+     * @return string
+     */
+    function getRole(){
+        $role="USER";
+        if(isset($_SESSION['login'])){
+           $role=getRoleByLogin($_SESSION['login']);   
+        }
+        return $role;
+    }
+    
+    
     
 
 ?>
