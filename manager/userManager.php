@@ -30,15 +30,16 @@ function updateUser($user) {
     return $stmt->execute();
 }
 
-function deleteUser($userId){
+function deleteUser($user){
 
     $dbh = getDatabaseConnection();
 
     $sql = "DELETE FROM users
-            WHERE ID = $userId";
+            WHERE ID = :id";
 
     $stmt = $dbh->prepare($sql);
 
-    return $stmt->execute();
+    $stmt->bindValue(':id', $user['ID']);
 
+    return $stmt->execute();
 }

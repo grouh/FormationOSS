@@ -21,9 +21,9 @@
      */
     function getAllPlanning(){
         
-    $bdh = new PDO('mysql:host=localhost; dbname=FormationOSS', 'root', 'root');
+        $bdh = new PDO('mysql:host=localhost; dbname=FormationOSS', 'root', 'root');
         
-    $results = $dbh -> query("SELECT * FROM planning");
+        $results = $dbh -> query("SELECT * FROM planning");
         
-    return $results;
+        return $results;
     }

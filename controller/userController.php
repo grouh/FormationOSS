@@ -1,8 +1,8 @@
 <?php
 
-include 'repository/usersRepository.php';
-include 'manager/userManager.php';
-include 'form/editUserForm.php';
+include '../repository/usersRepository.php';
+include '../manager/userManager.php';
+include '../form/editUserForm.php';
 
 function renderListUsers(){
 
@@ -10,7 +10,7 @@ function renderListUsers(){
     $users = getAllUsers();
     
     //display it
-    include 'views/listUsersView.php';
+    include '../views/listUsersView.php';
 
 }
 
@@ -49,7 +49,7 @@ function renderEditUser(){
     }
 
     //call view
-    include 'views/editUserView.php';
+    include '../views/editUserView.php';
 
 }
 
@@ -61,13 +61,23 @@ function renderDeleteUser(){
     }
 
     //get user to delete
-    $userId = getUserById($_GET['userid']);
+    $user = getUserById($_GET['userid']);
 
     if(isset($_POST['delete'])){
-        $userId = $user['ID'];
-        deleteUser($userId);
+
+        $user = array(
+            'ID' => $user['ID'],
+            'login' => $user['login'],
+            'role' => $_POST['role'],
+            'firstName' => $_POST['firstName'],
+            'lastName' => $_POST['lastName'],
+            'email' => $_POST['email'],
+            'phone' => $_POST['phone']
+        );
+
+        deleteUser($user);
     }
 
     //call view
-    include 'views/deleteUserView.php';
+    include '../views/deleteUserView.php';
 }
