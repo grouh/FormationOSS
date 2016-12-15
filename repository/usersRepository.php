@@ -14,6 +14,7 @@ function userIsOk($login, $password) {
     $result = $bdd->query('SELECT login, password FROM users WHERE login=$login and password=$password ');
 
     return $result->fetchAll();
+}
 
 
 
