@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-    include_once './controller/FrontController.php';
+    include_once './controller/frontController.php';
     echo render();
 ?>
 </body>

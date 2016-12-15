@@ -1,12 +1,12 @@
 <?php
 
+    include_once 'controller/menuController.php';
     include_once 'controller/loginController.php';
+    include_once 'controller/userController.php';
     include_once 'services/authenticationService.php';
 
     function render(){
 
-        echo "render";
-        
         //Anonymous controller
         if(!isUserLoggedIn()){
 
@@ -20,19 +20,27 @@
         }
 
         //Secured routes
-        if(isUserLoggedIn()) {
+        if(isUserLoggedIn() && isset($_GET['action'])) {
+
+            renderMenu();
+
             switch ($_GET['action']) {
                 case 'planning':
                     // Display planning
                     // Edit planning
                     // Create planning
                     //renderPlanning();
+                    break;
                 case 'listUsers':
                     // List users
-                    //renderListUsers();
+                    renderListUsers();
+                    break;
                 case 'editUser':
                     // Edit user
-                    //renderEditUser();
+                    renderEditUser();
+                    break;
             }
+        }else{
+            "nothing to display";
         }
     }
