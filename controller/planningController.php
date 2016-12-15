@@ -1,10 +1,10 @@
 <?php
 
 
-require '../manager/planningManager.php';
-require '../form/createPlanningForm.php';
-require '../form/editPlanningForm.php';
-require '../repository/planningRepository.php';
+require './manager/planningManager.php';
+require './form/createPlanningForm.php';
+//require '../form/editPlanningForm.php';
+require './repository/planningRepository.php';
 
 
 
@@ -62,6 +62,7 @@ require '../repository/planningRepository.php';
 }
 
 
+
 function renderCreatePlanning()
 {
 
@@ -74,7 +75,7 @@ function renderCreatePlanning()
 
                 $messageInfo = "Planning créé";
                 //a confirmer
-                header("Location: /routing/frontController.php");
+                header("Location: ?action=listPlanning");
             }
         }
     }
@@ -83,5 +84,5 @@ function renderCreatePlanning()
     }
 
 
-    include('../views/createPlanningView.php');
+    include('./views/createPlanningView.php');
 }

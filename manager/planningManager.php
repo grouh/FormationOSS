@@ -1,6 +1,6 @@
 <?php
 
-    require_once './services/sqlDriverService.php';
+    require_once '../services/sqlDriverService.php';
 
 
     /**
