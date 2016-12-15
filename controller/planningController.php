@@ -41,7 +41,7 @@ require '../form/createPlanningForm.php';
 
 
 
-function renderEditUser()
+function renderCreatePlanning()
 {
 
 
