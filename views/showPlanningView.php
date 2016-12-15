@@ -1,6 +1,6 @@
 <?php 
-    
-    $role="ADMIN";
+    include "../manager/showPlanningManager.php";
+    $role=getRole(); 
       
 ?>
 <!DOCTYPE html>

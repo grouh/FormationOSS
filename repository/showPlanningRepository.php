@@ -31,4 +31,15 @@ function getPlanningData(){
     return $data;
 }
 
+/**
+ * get the role of a user from the table 'users' by passing the login 
+ * @param string $login
+ * @return array
+ */
+function getRoleByLogin($login){
+     $db = new PDO(DSN, USER, PASS);
+     $rq="SELECT role FROM users where login = '$login'";
+     $result=$db->query($rq); 
+     return $result->fetch();
+}
 ?>
