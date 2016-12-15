@@ -4,4 +4,8 @@
     Formateur : <input type="text" name="Teacher" value=""/><br/>
 
     <input type="submit" value="Create" name="createPlanning"/>
+
+    <?php echo $messageInfo ?>
 </form>
+
+
