@@ -13,7 +13,12 @@ function validateCreateForm(){
 
    // echo "debut validateCreateForm ";
    if( isset($_POST["Date"])&& isset($_POST["Label"]) &&   isset($_POST["Teacher"])){
-        if(!isint($_POST(""))){
+        if(($_POST["Label"])=="" || ($_POST["Teacher"])==""){
+           throw new Exception("Champ vide!");
+       }
+
+
+       if(!is_numeric($_POST["Date"])){
             throw new Exception("La date doit être au format numerique!");
         }
 
