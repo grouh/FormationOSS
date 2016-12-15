@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-include '../views/sessionManager.php';
+include '../manager/sessionManager.php';
 include '../form/loginForm.php';
 
 
@@ -21,6 +21,9 @@ include '../form/loginForm.php';
 
 
 function renderLoginForm() {
+    
+    require_once '../views/loginView.php';
+    
     $error = check_form($_POST["login"], $_POST["password"]);
 
     if (!$error) {
@@ -33,4 +36,3 @@ function renderLoginForm() {
     return "this is the login form";
 }
 
-require_once '../views/loginView.php';
