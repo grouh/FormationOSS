@@ -6,7 +6,7 @@
     include_once 'controller/trainerController.php';
     include_once 'controller/planningController.php';
     include_once 'controller/showPlanningController.php';
-    include_once 'services/authenticationService.php';
+    include_once 'manager/sessionManager.php';
 
     function render(){
 
@@ -65,6 +65,10 @@
                 case 'deleteUser':
                     //Delete user
                     renderDeleteUser();
+                    break;
+                case 'logout':
+                    //Delete user
+                    executeLogout();
                     break;
             }
         }else{
