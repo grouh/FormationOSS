@@ -1,6 +1,6 @@
 <?php
 
-
+include '../services/sqlDriverService.php';
 /**
  * Make an update of the formation ine the database
  * @param int $date
@@ -31,29 +31,23 @@ function deletePlanning($id){
  * Créer un nouveau planning
  * @param date $date
  * @param string $cours
- * @param string $nameTeacher
+ * @param string $teacher
  */
-function createPlanning($date, $cours, $nameTeacher) {
-    echo "debut createPlanning DB ";
+function createPlanning($date, $cours, $teacher) {
+
     try {
-        $dsn = 'mysql:host=localhost;dbname=FormationOSS';
-        $user = 'root';
-        $pass = 'root';
-        $dbh = new PDO($dsn, $user, $pass);
-        $query = $dbh->prepare(""
-            . " INSERT INTO PLANNING "
-            . " VALUES ( " . $date . ", " . $cours . ", " . $nameTeacher . ");");
-        echo $query;
+        $dbh = getDatabaseConnection();
 
-        //$query->execute();
+        $stmt = $dbh->prepare(" INSERT INTO planning (date, label, teach) VALUES (?, ?, ?)");
+        $stmt->bindParam(1, $date);
+        $stmt->bindParam(2, $cours);
+        $stmt->bindParam(3, $teacher);
 
-
+        $stmt->execute();
     }
 
-
     catch(Exception $e) {
-        //excep
-        echo "base pas encore présente ";
+        throw  new Exception("Error create in base ");
     }
 
 }
