@@ -1,10 +1,10 @@
 
 
 <p> Enter your login and password or         
-    <a href="signUpView.php">Sign Up</a>
+    <a href="?action=signUp">Sign Up</a>
 </p>
 
-<form action="" method="post">
+<form action="#" method="post">
     <p> 
         Login <input type="text" name="login" /> <br />
         Password <input type="password" name="password" /> <br />
