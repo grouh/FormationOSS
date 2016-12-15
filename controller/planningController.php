@@ -1,10 +1,10 @@
 <?php
 
 
-require './manager/planningManager.php';
-require './form/createPlanningForm.php';
-//require '../form/editPlanningForm.php';
-require './repository/planningRepository.php';
+require_once './manager/planningManager.php';
+require_once './form/createPlanningForm.php';
+require_once './form/editPlanningForm.php';
+require_once './repository/planningRepository.php';
 
 
     function renderListPlanning(){

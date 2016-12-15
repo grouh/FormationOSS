@@ -1,6 +1,6 @@
 <?php
-    include("../form/signUpForm.php");   
-    include("../views/signUpView.php");
+require_once("./form/signUpForm.php");
+require_once("./views/signUpView.php");
 
     function renderSignUpForm(){
         
@@ -18,7 +18,7 @@
         }
 
         else{
-            include('../views/signUpView.php');
+            include('./views/signUpView.php');
         }
     }
        

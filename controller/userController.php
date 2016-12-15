@@ -1,8 +1,8 @@
 <?php
 
-include '../repository/usersRepository.php';
-include '../manager/userManager.php';
-include '../form/editUserForm.php';
+require_once './repository/usersRepository.php';
+require_once './manager/userManager.php';
+require_once './form/editUserForm.php';
 
 function renderListUsers(){
 
@@ -10,7 +10,7 @@ function renderListUsers(){
     $users = getAllUsers();
     
     //display it
-    include '../views/listUsersView.php';
+    include './views/listUsersView.php';
 
 }
 
@@ -49,7 +49,7 @@ function renderEditUser(){
     }
 
     //call view
-    include '../views/editUserView.php';
+    include './views/editUserView.php';
 
 }
 

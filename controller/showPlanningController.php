@@ -1,6 +1,6 @@
 <?php
 
-   include "../repository/showPlanningRepository.php";  
+require_once "./repository/showPlanningRepository.php";
    
     /**
      * retrieve the planning from table Planning
@@ -11,11 +11,11 @@
     
         if($dataPlanning['erreurs']== false){
             $outputData=$dataPlanning['res'];
-            include "../views/showPlanningView.php";
+            include "./views/showPlanningView.php";
         }
         else{
             $error=$dataPlanning["errors"];
-             include "Location: ../views/errorViews.php";
+             include "Location: ./views/errorViews.php";
         }          
     }
     

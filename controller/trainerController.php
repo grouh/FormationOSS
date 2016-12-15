@@ -1,8 +1,8 @@
 <?php
 
-include 'repository/trainersRepository.php';
-include 'manager/trainerManager.php';
-include 'form/editTrainerForm.php';
+require_once 'repository/trainersRepository.php';
+require_once 'manager/trainerManager.php';
+require_once 'form/editTrainerForm.php';
 
 function renderListTrainers(){
 

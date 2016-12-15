@@ -6,8 +6,8 @@
  * and open the template in the editor.
  */
 
-include './manager/sessionManager.php';
-include './form/loginForm.php';
+require_once './manager/sessionManager.php';
+require_once './form/loginForm.php';
 
 //si le formulaire est soumis, je verifie les erreurs > form ==> check_form()
 //affiche le formulaire avec les erreurs si il y en a > view ==> display_errors()
@@ -24,6 +24,6 @@ function renderLoginForm() {
 
         createSession($login, $password);
     }
-    require_once './views/loginView.php';
+    include './views/loginView.php';
 }
 
