@@ -31,7 +31,7 @@
                     renderCreatePlanning();
                     break;
                 case 'listPlanning':
-                    renderCreatePlanning();
+                    renderListPlanning();
                     break;
                 case 'editPlanning':
                     renderEditPlanning();
