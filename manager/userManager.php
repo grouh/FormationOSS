@@ -29,3 +29,16 @@ function updateUser($user) {
 
     return $stmt->execute();
 }
+
+function deleteUser($userId){
+
+    $dbh = getDatabaseConnection();
+
+    $sql = "DELETE FROM users
+            WHERE ID = $userId";
+
+    $stmt = $dbh->prepare($sql);
+
+    return $stmt->execute();
+
+}
