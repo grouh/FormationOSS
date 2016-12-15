@@ -5,7 +5,8 @@
 </head>
 <body>
 <?php
-    echo "coucou";
+    include_once './routing/frontController.php';
+    echo render();
 ?>
 </body>
 </html>

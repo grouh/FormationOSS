@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -31,3 +32,8 @@ require_once '../views/loginView.php';
 
 
 
+=======
+    function renderLoginForm(){
+        return "this is the login form";
+    }
+>>>>>>> f74adaf1061a93b85b390b123f74b3b20e24f4b1
