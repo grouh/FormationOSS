@@ -12,7 +12,7 @@
 
             if(isset($_GET['action']) && $_GET['action']=='signup'){
                 //Sign up form
-                //return renderSignUpForm();
+                return renderSignUpForm();
             }else{
                 //Login form
                 return renderLoginForm();
@@ -44,6 +44,6 @@
                     renderDeleteUser();
             }
         }else{
-            "nothing to display";
+            return "nothing to display";
         }
     }
