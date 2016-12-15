@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 require_once "services/sqlDriverService.php";
+=======
+require_once "./services/sqlDriverService.php";
+>>>>>>> 443192adf3f18bc95228c02e45618cacdf1c224b
 
 function getAllTrainers() {
 

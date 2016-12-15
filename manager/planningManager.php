@@ -1,5 +1,7 @@
 <?php
 
+    require_once '../services/sqlDriverService.php';
+
     /**
      * Delete a formation in the database
      * @param int $date
@@ -10,7 +12,6 @@
 
         $result= $bdh -> query("DELETE FROM planning WHERE ID='.$id.'");
 
-        include '../services/sqlDriverService.php';
     }
     
     
