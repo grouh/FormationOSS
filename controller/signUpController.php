@@ -21,7 +21,7 @@ require_once("./form/signUpForm.php");
                 
                 //S'il n'ya pas d'erreurs sur le formulaire saisi, je crée un utilisateur et je le redirige vers la page du login avec une action=""
                 createUser($userLogin,$userPsw,'USER',$userFirstName,$userLastName,$userPhone,$userEmail);
-                echo "coucou";//header('Location:?action=');
+                header('Location:?action=');
 
             }
       
