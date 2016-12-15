@@ -5,11 +5,11 @@
      * @param int $date
      * @return Date, label and teacher
      */
-    function getPlanning($date){
+    function getPlanningById($id){
         
         $bdh = new PDO('mysql:host=localhost; dbname=FormationOSS', 'root', 'root');
         
-        $results = $dbh -> query("SELECT * FROM planning WHERE date='.$date.'");
+        $results = $dbh -> query("SELECT * FROM planning WHERE date='.$id.'");
         
         return $results;
     }
