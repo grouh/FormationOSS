@@ -3,6 +3,7 @@
 
 require '../manager/planningManager.php';
 require '../form/createPlanningForm.php';
+require '../repository/planningRepository.php';
 
 
     function renderListPlanning(){
@@ -13,7 +14,7 @@ require '../form/createPlanningForm.php';
 
         //Get planning to edit
         // in repository
-        //$planning = getPlannning($date);
+        $planning = getPlannning($date);
 
         //check the planning data if submitted
         //editPlanningForm in form elements
@@ -23,7 +24,7 @@ require '../form/createPlanningForm.php';
         if(!$error){
             //update the planning data
             // in managers
-            //updatePlanning($_POST['values']);
+            updatePlanning($_POST["Id"], $_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
 
             //redirect user to the planning
             //header("listeController.php");

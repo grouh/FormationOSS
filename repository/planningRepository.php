@@ -13,3 +13,17 @@
         
         return $results;
     }
+    
+    
+    /**
+     * Return all planning
+     * @return date, label and teacher
+     */
+    function getAllPlanning(){
+        
+    $bdh = new PDO('mysql:host=localhost; dbname=FormationOSS', 'root', 'root');
+        
+    $results = $dbh -> query("SELECT * FROM planning");
+        
+    return $results;
+    }
