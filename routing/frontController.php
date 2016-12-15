@@ -39,6 +39,9 @@
                     // Edit user
                     renderEditUser();
                     break;
+                case 'deleteUser':
+                    //Delete user
+                    renderDeleteUser();
             }
         }else{
             "nothing to display";

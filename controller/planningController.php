@@ -7,6 +7,7 @@ require '../form/editPlanningForm.php';
 require '../repository/planningRepository.php';
 
 
+
     function renderListPlanning(){
         
         $planning = getAllPlanning();
@@ -26,9 +27,7 @@ require '../repository/planningRepository.php';
         // in repository
         $planning = getPlannning($date);
 
-        //check the planning data if submitted
-        //editPlanningForm in form elements
-        //$error = checkEditPlanningForm($_POST['values']);
+}
 
         //if no error; then proceed to actions
         if(!$error){
@@ -36,47 +35,56 @@ require '../repository/planningRepository.php';
             // in managers
             updatePlanning($_POST["ID"], $_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
 
-            //redirect user to the planning
-            //header("listeController.php");
-        }
+    //Get planning to edit
+    // in repository
+    //$planning = getPlannning($date);
 
-        //Display form with planning with error
-        // in views
-        //$html = editPlanningView($planning,$error);
+    //check the planning data if submitted
+    //editPlanningForm in form elements
+    //$error = checkEditPlanningForm($_POST['values']);
 
-        return $html;
+    //if no error; then proceed to actions
+    if (!$error) {
+        //update the planning data
+        // in managers
+        //updatePlanning($_POST['values']);
 
+        //redirect user to the planning
+        //header("listeController.php");
     }
 
+    //Display form with planning with error
+    // in views
+    //$html = editPlanningView($planning,$error);
 
+    return $html;
 
+}
 
 
 function renderCreatePlanning()
 {
 
+    $messageInfo = "";
+    try {
+        if (isset($_POST['createPlanning'])) {
+            if (validateCreateForm()) {
 
-    if (validateCreateForm()) {
+                //  echo "on a validé le formulaire ";
+                createPlanning($_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
 
-        //  echo "on a validé le formulaire ";
-        createPlanning($_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
-        // echo "on a fait le createPlanning ";
-    } else {
-        //  echo "probleme controleur ";
-        //probleme
-    }
+                $messageInfo = "Planning créé";
 
-    /*if (isset($_POST["Date"])&& isset($_POST["Label"]) &&   isset($_POST["Teacher"])) {
+            } else {
+                //  echo "probleme controleur ";
+                //probleme
+            }
 
-        if (validateCreateForm($_POST["Date"], $_POST["Label"], $_POST["Teacher"])) {
-            $date = $_POST["Date"];
-            $label = $_POST["Label"];
-            $teacher = $_POST["Teacher"];
-            createPlanning($date, $label, $teacher);
-        } else {
-            //probleme
         }
-    }*/
+    }
+    catch (Exception $e) {
+        $messageInfo = "Exception " . $e->getMessage();
+    }
 
 
     include('../views/createPlanningView.php');
