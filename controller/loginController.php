@@ -14,16 +14,23 @@ require_once './form/loginForm.php';
 //si pas d'erreur > appel manager session , puis redirection vers leplanning
 
 function renderLoginForm() {
-    
-    $error = check_form($_POST["login"], $_POST["password"]);
 
-    if (!$error) {
 
-        $login = $_POST["login"];
-        $password = $_POST["password"];
+    if (isset($_POST['Submit1'])) {
 
-        createSession($login, $password);
+        $error = check_form($_POST["login"], $_POST["password"]);
+
+        if (!$error) {
+
+            $login = $_POST["login"];
+            $password = $_POST["password"];
+
+
+            if (userIsOK($login, $password)) {
+                createSession($login, $password);
+                header("Location:./views/listPlanningView.php");
+            }
+        }
     }
     include './views/loginView.php';
 }
-
