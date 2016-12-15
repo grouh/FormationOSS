@@ -25,12 +25,10 @@ function renderLoginForm() {
             $login = $_POST["login"];
             $password = $_POST["password"];
 
-
-            if (userIsOK($login, $password)) {
-                createSession($login, $password);
-                header("Location:./views/listPlanningView.php");
-            }
+            createSession($login, $password);
+            header("Location:?action=listPlanning");
         }
     }
+
     include './views/loginView.php';
 }

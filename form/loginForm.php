@@ -8,16 +8,20 @@
 
 function check_form($login, $password) {
 
-    if (isset($login) && isset($password)) {
-        
-        
-        return FALSE;
-        
-    } else {
 
-
-        return 'login incorrect please try again or sign-up';
+    
+    $error=FALSE;
+    
+    if($login=="" || $password==""){
+        
+        $error= "il faut remplir les champs";
+        
     }
+    
+    if (!userIsOK($login, $password)) {
+        $error="les identifiants ne sont pas corrects";
+    }
+    return $error;
 }
 
       
