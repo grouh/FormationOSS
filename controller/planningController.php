@@ -3,14 +3,24 @@
 
 require '../manager/planningManager.php';
 require '../form/createPlanningForm.php';
+require '../form/editPlanningForm.php';
 require '../repository/planningRepository.php';
 
 
     function renderListPlanning(){
-
+        
+        $planning = getAllPlanning();
+    
+        //display it
+        include 'views/listPlanningView.php';
     }
 
     function renderEditPlanning($date){
+        
+        if(!isset($_GET['ID'])){
+        echo "error on planning id";
+        //TODO display error message
+    }
 
         //Get planning to edit
         // in repository
@@ -24,7 +34,7 @@ require '../repository/planningRepository.php';
         if(!$error){
             //update the planning data
             // in managers
-            updatePlanning($_POST["Id"], $_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
+            updatePlanning($_POST["ID"], $_POST["Date"], $_POST["Label"], $_POST["Teacher"]);
 
             //redirect user to the planning
             //header("listeController.php");
