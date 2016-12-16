@@ -14,7 +14,7 @@
         //Anonymous controller
         if(!isUserLoggedIn()){
 
-            if(isset($_GET['action']) && $_GET['action']=='signup'){
+            if(isset($_GET['action']) && $_GET['action']=='signUp'){
   
                 //Sign up form
                 return renderSignUpForm();
@@ -38,9 +38,7 @@
                     renderCreateTrainer();
                     break;
                 case 'listPlanning':
-
                     renderPlanning();
-
                     break;
                 case 'editPlanning':
                     renderEditPlanning();
